@@ -1,10 +1,12 @@
-import { useAppContent } from '../../hooks/useAppContent';
 import './header.scss';
-export const Header: React.FC = () => {
-  const { appLogo } = useAppContent<string>('labels');
+
+type HeaderProps = {
+  headerTitle: string;
+};
+export const Header: React.FC<HeaderProps> = ({ headerTitle }) => {
   return (
     <header className="header p-8 mb-4">
-      <h3 className="logo">{appLogo}</h3>
+      <h3 className="logo">{headerTitle}</h3>
     </header>
   );
 };

@@ -2,11 +2,13 @@
 
 import { Header } from './components/Header';
 import { TradeForm } from './components/TradeForm';
+import { useAppContent } from './hooks/useAppContent';
 
 export function App() {
+  const { appLogo } = useAppContent<string>('labels');
   return (
     <>
-      <Header />
+      <Header headerTitle={appLogo} />
       <div className="container">
         <TradeForm />
       </div>
